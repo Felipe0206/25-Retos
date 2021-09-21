@@ -1,0 +1,69 @@
+* {
+    de caja de tamaño : frontera-box;
+  }
+  
+  cuerpo {
+    color de fondo :  # 2c3e50 ;
+    pantalla : flex;
+    alinear-elementos : centro;
+    justificar-contenido : centro;
+    altura :  100 vh ;
+    desbordamiento : oculto;
+    margen :  0 ;
+  }
+  
+  . cinético {
+    posición : relativa;
+    altura :  80 px ;
+    ancho :  80 px ;
+  }
+  
+  . cinético :: después ,
+  . cinético :: antes {
+    contenido :  '' ;
+    posición : absoluta;
+    arriba :  0 ;
+    izquierda :  0 ;
+    ancho :  0 ;
+    altura :  0 ;
+    borde :  50 px sólido transparente;
+    color del fondo del borde :  # fff ;
+    animación : rotateA 2 s lineal infinito 0,5 s ;
+  }
+  
+  . cinético :: antes {
+    transformar :  rotar ( 90 grados );
+    animación : rotateB 2 s lineal infinito;
+  }
+  
+  @keyframes rotateA {
+    0 % ,
+    25 % {
+      transformar :  rotar ( 0 grados );
+    }
+  
+    50 % ,
+    75 % {
+      transformar :  rotar ( 180 grados );
+    }
+  
+    100 % {
+      transformar :  rotar ( 360 grados );
+    }
+  }
+  
+  @keyframes rotateB {
+    0 % ,
+    25 % {
+      transformar :  rotar ( 90 grados );
+    }
+  
+    50 % ,
+    75 % {
+      transformar :  rotar ( 270 grados );
+    }
+  
+    100 % {
+      transformar :  rotar ( 450 grados );
+    }
+  }
