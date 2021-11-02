@@ -1,69 +1,69 @@
 * {
-    de caja de tamaño : frontera-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #2c3e50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.kinetic {
+  position: relative;
+  height: 80px;
+  width: 80px;
+}
+
+.kinetic::after,
+.kinetic::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: 50px solid transparent;
+  border-bottom-color: #fff;
+  animation: rotateA 2s linear infinite 0.5s;
+}
+
+.kinetic::before {
+  transform: rotate(90deg);
+  animation: rotateB 2s linear infinite;
+}
+
+@keyframes rotateA {
+  0%,
+  25% {
+    animation: rotateB 2s linear infinite;
   }
-  
-  cuerpo {
-    color de fondo :  # 2c3e50 ;
-    pantalla : flex;
-    alinear-elementos : centro;
-    justificar-contenido : centro;
-    altura :  100 vh ;
-    desbordamiento : oculto;
-    margen :  0 ;
+
+  50%,
+  75% {
+    transform: rotate(180deg);
   }
-  
-  . cinético {
-    posición : relativa;
-    altura :  80 px ;
-    ancho :  80 px ;
+
+  100% {
+    transform: rotate(360deg);
   }
-  
-  . cinético :: después ,
-  . cinético :: antes {
-    contenido :  '' ;
-    posición : absoluta;
-    arriba :  0 ;
-    izquierda :  0 ;
-    ancho :  0 ;
-    altura :  0 ;
-    borde :  50 px sólido transparente;
-    color del fondo del borde :  # fff ;
-    animación : rotateA 2 s lineal infinito 0,5 s ;
+}
+
+@keyframes rotateB {
+  0%,
+  25% {
+    transform: rotate(90deg);
   }
-  
-  . cinético :: antes {
-    transformar :  rotar ( 90 grados );
-    animación : rotateB 2 s lineal infinito;
+
+  50%,
+  75% {
+    transform: rotate(270deg);
   }
-  
-  @keyframes rotateA {
-    0 % ,
-    25 % {
-      transformar :  rotar ( 0 grados );
-    }
-  
-    50 % ,
-    75 % {
-      transformar :  rotar ( 180 grados );
-    }
-  
-    100 % {
-      transformar :  rotar ( 360 grados );
-    }
+
+  100% {
+    transform: rotate(450deg);
   }
-  
-  @keyframes rotateB {
-    0 % ,
-    25 % {
-      transformar :  rotar ( 90 grados );
-    }
-  
-    50 % ,
-    75 % {
-      transformar :  rotar ( 270 grados );
-    }
-  
-    100 % {
-      transformar :  rotar ( 450 grados );
-    }
-  }
+}
